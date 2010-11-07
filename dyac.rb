@@ -14,7 +14,7 @@ set :views, File.dirname(__FILE__)
 
 def scrape(html)
   doc = Nokogiri::XML html.gsub(/[^[:print:]]/, "")
-  doc.css('#content .post .body p img[src^="http://damnyouautocorrect.com/img"]')
+  doc.css('#content .post .body p img')
 end
 
 def em_run
