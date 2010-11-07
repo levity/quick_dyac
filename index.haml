@@ -1,0 +1,27 @@
+!!! XML
+!!!
+%html
+  %head
+    %title Quick "Damn You Autocorrect"
+    :css
+      body {width: #{(@images.size + 1) * 360}px; background: #555}
+      img {float: left; margin: 20px; width: 320px}
+      #footer {margin: 20px; width: 320px; float: left}
+  %body
+    - @images.each do |i|
+      %img(src="#{i[:src]}")
+    #footer
+      a quick hack
+      %br
+      all content from damnyouautocorrect.com
+      %br
+      used without permission (sorry)
+      %br
+      page built in #{Time.now - @start_time}s 
+      %br
+      at #{@start_time}
+      %br
+      - unless @errors.empty?
+        %ul
+          - @errors.each do |e|
+            %li= e
