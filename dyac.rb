@@ -68,5 +68,6 @@ get '/' do
   @start_time = Time.now
   # em_run
   serial_run
+  response['Cache-Control'] = 'public, max-age=3600'
   haml :index
 end
