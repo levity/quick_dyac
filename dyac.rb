@@ -71,3 +71,8 @@ get '/' do
   response['Cache-Control'] = 'public, max-age=3600'
   haml :index
 end
+
+get '/env' do
+  content_type 'text/plain'
+  env.to_yaml
+end
