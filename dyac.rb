@@ -52,7 +52,7 @@ def serial_run
   finished, @errors, @images, pages = 0, [], [], 5
 
   pages.times do |num|
-    uri = 'http://damnyouautocorrect.com' + (num > 1 ? "/page/#{num}/" : "/")
+    uri = 'http://damnyouautocorrect.com' + (num > 0 ? "/page/#{num+1}/" : "/")
     begin
       SystemTimer.timeout(5) do
         @images += scrape open(uri).read
